@@ -20,11 +20,6 @@ const TabPanelContainer = styled('div')(({ theme }) => ({
   flex:1,
 }));
 
-const TabsContainer = styled('div')({
-  width: '800px', // Set the desired width
-
-});
-
 const PaginationContainer = styled('div')(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
