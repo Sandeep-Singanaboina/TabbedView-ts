@@ -11,7 +11,6 @@ const options: Option[] = [
   { value: 'option1', label: 'Test 1' },
   { value: 'option2', label: 'Test 2' },
   { value: 'option3', label: 'Test 3' },
-  // Add more options as needed
 ];
 
 const MultiSelectList: React.FC = () => {
@@ -21,6 +20,9 @@ const MultiSelectList: React.FC = () => {
     setSelectedOptions(value);
   };
 
+  // Filter the options
+  const filteredOptions = options.filter((option) => !selectedOptions.includes(option));
+
   return (
     <Box display="flex" alignItems="center">
       <Box marginRight={1}>
@@ -29,7 +31,7 @@ const MultiSelectList: React.FC = () => {
       <Box display="inline-block" width="600px" maxHeight="150px" overflow="auto">
         <Autocomplete
           multiple
-          options={options}
+          options={filteredOptions}
           getOptionLabel={(option) => option.label}
           value={selectedOptions}
           onChange={handleSelectChange}
